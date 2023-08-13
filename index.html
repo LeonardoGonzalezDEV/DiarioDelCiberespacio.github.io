@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario del Ciberespacio</title>
+    <link rel="icon" href="img/ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Diario del Ciberespacio</h1>
+    </header>
+    <div class="intro">
+        <p>Bienvenido a Mi Diario Digital, donde puedes guardar tus pensamientos y recuerdos de manera virtual. ¡Escribe, guarda y revísalo cuando quieras!</p>
+    </div>
+    <div class="container">
+        <textarea id="diary-entry" placeholder="Escribe tu diario aquí"></textarea>
+        <button id="save-button">Guardar</button>
+        <div id="cards-container"></div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Leonardo Gonzalez. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js') // Registra el Service Worker
+                .then(registration => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                })
+                .catch(error => {
+                    console.log('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
+</body>
+</html>
